@@ -40,3 +40,31 @@ for (let link of links) {
     link.addEventListener('click', titleClickHandler);
 }
 
+const optArticleSelector = '.post',
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
+
+function generateTitleLinks() {
+    /* [DONE] remove contents of titleList */
+    const titleList = document.querySelector(optTitleListSelector);
+    titleList.innerHTML = '';
+    /* [DONE] for each article */
+    const articles = document.querySelectorAll(optArticleSelector);
+    let html = '';
+        for (let article of articles) {
+
+        /* [DONE] get the article id */
+        const articleId = article.getAttribute('id');
+        /* [DONE] find the title element */ /* [DONE] get the title from the title element */
+        const articleTitle = article.querySelector(optTitleSelector).innerHTML; 
+
+        /* create HTML of the link */
+        const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+            console.log
+        /* insert link into titleList */
+        const insertHTML = article.getAttribute('id');
+        html = html + linkHTML
+    }
+}
+   
+    generateTitleLinks();
