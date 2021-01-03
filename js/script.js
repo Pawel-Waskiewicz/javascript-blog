@@ -156,7 +156,7 @@ function generateAuthors(){
     /* make html variable with empty string */
     let html = '';
     /* get authors from data-authors attribute */
-    const author = article.getAttribute('data-authors');
+    const author = article.getAttribute('data-author');
     /* generate html of the link */
     const linkHTML = '<li><a href="#author-' + author + '">' + author + '</a></li>';
     /* add generated code to html variable */
