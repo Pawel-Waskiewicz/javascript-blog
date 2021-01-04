@@ -176,7 +176,7 @@ function authorClickHandler(event) {
   /* make new constant "href" and read the artibute href of clickedElement */
   const href = clickedElement.getAttribute('href');
   /* make new constant "author" and extract tag from constant "href" */
-  const author = href.replace('#tag-', '');
+  const author = href.replace('#author-', '');
   /* find all author links with class acive */
   const activeAuthorLinks = document.querySelectorAll('a.active[href^="#tag-"]');
   /* START LOOP: for each active author link */
@@ -197,8 +197,13 @@ function authorClickHandler(event) {
   generateTitleLinks('[data-author="' + author + '"]');
 }
 
-/*function addClickListenersToAuthors*/
+function addClickListenersToAuthors(){
 /* find all links to authors */
-/*const linkAuthor = document.querySelectorAll('a[href^="#tag-"]');*/
-/* START LOOP: for each link */
-/* add authorClickHandler as event listener for that link */
+  const authorLinks = document.querySelectorAll('a[href^="#author"]');
+  /* START LOOP: for each link */
+  for (let authorLink of authorLinks){
+    /* add authorClickHandler as event listener for that link */
+    authorLink.addEventListener('click',authorClickHandler);
+  }
+}
+addClickListenersToAuthors();
