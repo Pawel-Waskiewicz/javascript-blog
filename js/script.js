@@ -2,7 +2,7 @@
     const links = document.querySelectorAll('.titles a');
     console.log('links:', links);
   });*/
-
+ 
 const titleClickHandler = function (event) {
   event.preventDefault();
   const clickedElement = this;
@@ -34,6 +34,7 @@ const titleClickHandler = function (event) {
   targetArticle.classList.add('active');
 };
 
+
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
@@ -62,16 +63,22 @@ function generateTitleLinks(customSelector = ''){
     html = html + linkHTML;
   }
   titleList.innerHTML = html;
-}
+
+  const links = document.querySelectorAll('.titles a');
+  console.log(links);
   
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
+}
 generateTitleLinks();
   
-const links = document.querySelectorAll('.titles a');
+/* const links = document.querySelectorAll('.titles a');
 console.log(links);
   
 for (let link of links) {
   link.addEventListener('click', titleClickHandler);
-}
+} */
 
 function generateTags(){
   /* find all articles */
@@ -132,7 +139,7 @@ function tagClickHandler(event){
   /* execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks('[data-tags~="' + tag + '"]');
 }
-  
+
 function addClickListenersToTags(){
   /* find all links to tags */
   const linkTag = document.querySelectorAll('a[href^="#tag-"]');
@@ -196,6 +203,7 @@ function authorClickHandler(event) {
   /* execute function "generateTitleLinks" with article selecor as argument*/
   generateTitleLinks('[data-author="' + author + '"]');
 }
+
 
 function addClickListenersToAuthors(){
 /* find all links to authors */
