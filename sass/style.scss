@@ -118,3 +118,22 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+/* Tags */
+.tags  {
+    display: inline;
+    text-decoration: none;
+    .tag-size-5 {
+    font-size: 24px;
+    text-decoration: none;
+    }
+    .tag-size-3 {
+        font-size: 20px;
+        text-decoration: none;
+        }
+    .tag-size-1 {
+        font-size: 16px;
+        text-decoration: none;
+        }
+}
+
